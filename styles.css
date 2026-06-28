@@ -198,6 +198,12 @@ img { max-width: 100%; }
 
 .hero-cta { display: flex; gap: 16px; flex-wrap: wrap; margin-bottom: 60px; }
 
+.hero-actions {
+  display: flex;
+  gap: 12px;
+  flex-wrap: wrap;
+}
+
 .btn-primary {
   background: var(--blue);
   color: var(--navy);
@@ -286,6 +292,37 @@ img { max-width: 100%; }
   max-width: 640px;
   margin-bottom: 56px;
   line-height: 1.7;
+}
+
+.core-competencies {
+  background: #f8fafc;
+  border: 1px solid #dbe7f3;
+  border-left: 4px solid var(--blue-dark);
+  border-radius: 10px;
+  padding: 20px 22px;
+  margin-top: -20px;
+  margin-bottom: 36px;
+}
+
+.core-competencies h3 {
+  font-size: 0.95rem;
+  font-weight: 800;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  color: var(--navy);
+  margin-bottom: 10px;
+}
+
+.core-competencies ul {
+  margin: 0;
+  padding-left: 18px;
+  color: var(--text-muted);
+}
+
+.core-competencies li {
+  margin-bottom: 6px;
+  font-size: 0.92rem;
+  line-height: 1.45;
 }
 
 /* ---- CARDS GRID ---- */
@@ -739,6 +776,38 @@ img { max-width: 100%; }
 
 .footer-col a:hover { color: var(--blue); }
 
+.footer-gov {
+  border: 1px solid rgba(0,180,216,0.25);
+  border-radius: 10px;
+  padding: 16px;
+  margin-bottom: 20px;
+  background: rgba(13,34,64,0.55);
+}
+
+.footer-gov-title {
+  font-size: 0.74rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  color: var(--blue);
+  margin-bottom: 10px;
+}
+
+.footer-gov-items {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+
+.footer-gov-items span {
+  background: rgba(255,255,255,0.06);
+  border: 1px solid rgba(255,255,255,0.12);
+  border-radius: 999px;
+  padding: 6px 10px;
+  font-size: 0.78rem;
+  color: var(--silver);
+}
+
 .footer-bottom {
   border-top: 1px solid rgba(255,255,255,0.08);
   padding-top: 24px;
@@ -748,4 +817,12 @@ img { max-width: 100%; }
   gap: 12px;
   font-size: 0.8rem;
   color: rgba(202,211,223,0.5);
+}
+
+@media (max-width: 768px) {
+  .footer-gov-items { gap: 6px; }
+  .footer-gov-items span {
+    font-size: 0.74rem;
+    padding: 5px 9px;
+  }
 }

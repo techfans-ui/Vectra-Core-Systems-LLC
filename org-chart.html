@@ -1,0 +1,406 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Vectra Core Systems LLC — Organizational Chart</title>
+<style>
+  :root {
+    --navy:   #0B1F4B;
+    --blue:   #1A3A7C;
+    --accent: #2E6BE6;
+    --light:  #E8EFFD;
+    --grey:   #6B7280;
+    --line:   #93C5FD;
+    --white:  #FFFFFF;
+  }
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  body {
+    font-family: 'Segoe UI', system-ui, sans-serif;
+    background: #F0F4FF;
+    color: #1e293b;
+    padding: 40px 20px 60px;
+  }
+
+  /* Header */
+  .header {
+    text-align: center;
+    margin-bottom: 48px;
+  }
+  .header .logo-badge {
+    display: inline-flex;
+    align-items: center;
+    gap: 12px;
+    background: var(--navy);
+    color: #fff;
+    padding: 12px 28px;
+    border-radius: 50px;
+    margin-bottom: 16px;
+  }
+  .header .logo-badge .dot {
+    width: 12px; height: 12px;
+    background: var(--accent);
+    border-radius: 50%;
+  }
+  .header h1 { font-size: 28px; font-weight: 800; color: var(--navy); }
+  .header p  { color: var(--grey); font-size: 14px; margin-top: 6px; }
+  .meta {
+    display: flex; gap: 24px; justify-content: center; flex-wrap: wrap;
+    margin-top: 16px;
+  }
+  .meta span {
+    background: var(--white);
+    border: 1px solid #CBD5E1;
+    border-radius: 20px;
+    padding: 5px 14px;
+    font-size: 12px;
+    color: var(--grey);
+    font-weight: 600;
+  }
+
+  /* Chart container */
+  .chart { display: flex; flex-direction: column; align-items: center; gap: 0; }
+
+  /* Vertical connector */
+  .connector-v {
+    width: 2px; height: 36px;
+    background: var(--line);
+    margin: 0 auto;
+  }
+
+  /* Horizontal branch row */
+  .branch {
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    gap: 0;
+    position: relative;
+  }
+
+  /* Horizontal line spanning children */
+  .h-line-wrap {
+    display: flex;
+    justify-content: center;
+    position: relative;
+    width: 100%;
+  }
+  .h-line {
+    position: absolute;
+    top: 0;
+    height: 2px;
+    background: var(--line);
+  }
+
+  /* Card column */
+  .col {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    flex: 1;
+    min-width: 160px;
+    max-width: 210px;
+  }
+  .col .connector-v { height: 28px; }
+
+  /* Cards */
+  .card {
+    width: 190px;
+    border-radius: 14px;
+    padding: 16px 14px 14px;
+    text-align: center;
+    box-shadow: 0 4px 16px rgba(0,0,0,.10);
+    position: relative;
+    transition: transform .15s, box-shadow .15s;
+  }
+  .card:hover { transform: translateY(-3px); box-shadow: 0 8px 24px rgba(0,0,0,.15); }
+
+  .card .icon {
+    width: 44px; height: 44px;
+    border-radius: 50%;
+    display: flex; align-items: center; justify-content: center;
+    font-size: 20px;
+    margin: 0 auto 10px;
+  }
+  .card .title { font-size: 13px; font-weight: 800; line-height: 1.3; }
+  .card .name  { font-size: 11px; margin-top: 4px; opacity: .8; font-weight: 500; }
+  .card .dept  { font-size: 10px; margin-top: 6px; font-weight: 700;
+    padding: 2px 8px; border-radius: 10px; display: inline-block; }
+
+  /* Tier colors */
+  .tier-ceo   { background: var(--navy); color: #fff; border: 3px solid var(--accent); }
+  .tier-ceo .icon { background: var(--accent); }
+  .tier-ceo .dept { background: rgba(255,255,255,.15); color: #fff; }
+
+  .tier-c     { background: var(--blue); color: #fff; }
+  .tier-c .icon { background: rgba(255,255,255,.2); }
+  .tier-c .dept { background: rgba(255,255,255,.15); color: #fff; }
+
+  .tier-dir   { background: var(--white); border: 2px solid var(--accent); color: var(--navy); }
+  .tier-dir .icon { background: var(--light); }
+  .tier-dir .dept { background: var(--light); color: var(--accent); }
+
+  .tier-mgr   { background: var(--white); border: 2px solid #CBD5E1; color: #334155; }
+  .tier-mgr .icon { background: #F1F5F9; }
+  .tier-mgr .dept { background: #F1F5F9; color: var(--grey); }
+
+  .tier-adv   { background: #FFFBEB; border: 2px dashed #F59E0B; color: #78350F; }
+  .tier-adv .icon { background: #FEF3C7; }
+  .tier-adv .dept { background: #FEF3C7; color: #92400E; }
+
+  /* Legend */
+  .legend {
+    display: flex; gap: 16px; flex-wrap: wrap;
+    justify-content: center;
+    margin-top: 48px;
+  }
+  .legend-item {
+    display: flex; align-items: center; gap: 8px;
+    font-size: 12px; color: var(--grey); font-weight: 600;
+  }
+  .legend-dot { width: 14px; height: 14px; border-radius: 3px; }
+
+  /* Footer */
+  .footer {
+    text-align: center;
+    margin-top: 36px;
+    font-size: 11px;
+    color: #94a3b8;
+  }
+</style>
+</head>
+<body>
+
+<div class="header">
+  <div class="logo-badge">
+    <div class="dot"></div>
+    <span style="font-weight:800;font-size:16px;letter-spacing:.5px;">VECTRA CORE SYSTEMS LLC</span>
+    <div class="dot"></div>
+  </div>
+  <h1>Organizational Chart</h1>
+  <p>Technology · Logistics · Federal Contracting</p>
+  <div class="meta">
+    <span>📍 Grandview, MO 64030</span>
+    <span>UEI: XUXWMY61KXR6</span>
+    <span>CAGE: 21P32</span>
+    <span>EIN: 42-2899344</span>
+    <span>Est. June 2026</span>
+  </div>
+</div>
+
+<div class="chart">
+
+  <!-- TIER 1: CEO / Owner -->
+  <div class="card tier-ceo" style="width:220px;">
+    <div class="icon">👤</div>
+    <div class="title">Chief Executive Officer<br>& Managing Member</div>
+    <div class="name">Manse Soura</div>
+    <div class="dept">Executive Leadership</div>
+  </div>
+
+  <div class="connector-v"></div>
+
+  <!-- H-line to C-Suite -->
+  <div style="width:760px;position:relative;height:2px;background:var(--line);margin-bottom:0;"></div>
+
+  <!-- TIER 2: C-Suite (4 columns) -->
+  <div class="branch" style="width:800px;gap:20px;">
+
+    <div class="col">
+      <div class="connector-v"></div>
+      <div class="card tier-c">
+        <div class="icon">💻</div>
+        <div class="title">Chief Technology Officer</div>
+        <div class="name">(Open / Contractor)</div>
+        <div class="dept">Technology</div>
+      </div>
+    </div>
+
+    <div class="col">
+      <div class="connector-v"></div>
+      <div class="card tier-c">
+        <div class="icon">📦</div>
+        <div class="title">Chief Operations Officer</div>
+        <div class="name">(Open)</div>
+        <div class="dept">Logistics & Ops</div>
+      </div>
+    </div>
+
+    <div class="col">
+      <div class="connector-v"></div>
+      <div class="card tier-c">
+        <div class="icon">📋</div>
+        <div class="title">Director of Contracts &<br>Business Development</div>
+        <div class="name">(Open)</div>
+        <div class="dept">Federal Contracting</div>
+      </div>
+    </div>
+
+    <div class="col">
+      <div class="connector-v"></div>
+      <div class="card tier-c">
+        <div class="icon">💰</div>
+        <div class="title">Chief Financial Officer</div>
+        <div class="name">(Open / Part-time)</div>
+        <div class="dept">Finance & Compliance</div>
+      </div>
+    </div>
+
+  </div>
+
+  <div style="margin-top:28px;"></div>
+
+  <!-- TIER 3: Directors / Managers -->
+  <div class="branch" style="width:900px;gap:16px;flex-wrap:wrap;justify-content:center;">
+
+    <div class="col">
+      <div class="card tier-dir">
+        <div class="icon">🖥️</div>
+        <div class="title">IT Systems Design<br>Manager</div>
+        <div class="name">NAICS 541512</div>
+        <div class="dept">Technology</div>
+      </div>
+    </div>
+
+    <div class="col">
+      <div class="card tier-dir">
+        <div class="icon">☁️</div>
+        <div class="title">Cloud Infrastructure<br>Lead</div>
+        <div class="name">(AWS / Azure)</div>
+        <div class="dept">Technology</div>
+      </div>
+    </div>
+
+    <div class="col">
+      <div class="card tier-dir">
+        <div class="icon">🚚</div>
+        <div class="title">Freight & Supply Chain<br>Manager</div>
+        <div class="name">NAICS 488510</div>
+        <div class="dept">Logistics</div>
+      </div>
+    </div>
+
+    <div class="col">
+      <div class="card tier-dir">
+        <div class="icon">🏛️</div>
+        <div class="title">Federal Capture<br>Manager</div>
+        <div class="name">(Proposals & Bids)</div>
+        <div class="dept">Federal Contracting</div>
+      </div>
+    </div>
+
+    <div class="col">
+      <div class="card tier-dir">
+        <div class="icon">📊</div>
+        <div class="title">Supply Chain Consulting<br>Lead</div>
+        <div class="name">NAICS 541614</div>
+        <div class="dept">Consulting</div>
+      </div>
+    </div>
+
+  </div>
+
+  <div style="margin-top:28px;"></div>
+
+  <!-- TIER 4: Staff / Contractors -->
+  <div class="branch" style="width:900px;gap:16px;flex-wrap:wrap;justify-content:center;">
+
+    <div class="col">
+      <div class="card tier-mgr">
+        <div class="icon">⚙️</div>
+        <div class="title">Software / Systems<br>Developer</div>
+        <div class="name">(Contractor)</div>
+        <div class="dept">Technology</div>
+      </div>
+    </div>
+
+    <div class="col">
+      <div class="card tier-mgr">
+        <div class="icon">🔒</div>
+        <div class="title">Cybersecurity<br>Specialist</div>
+        <div class="name">(Contractor)</div>
+        <div class="dept">Technology</div>
+      </div>
+    </div>
+
+    <div class="col">
+      <div class="card tier-mgr">
+        <div class="icon">🗂️</div>
+        <div class="title">Logistics Coordinator</div>
+        <div class="name">(Contractor)</div>
+        <div class="dept">Logistics</div>
+      </div>
+    </div>
+
+    <div class="col">
+      <div class="card tier-mgr">
+        <div class="icon">✍️</div>
+        <div class="title">Proposal Writer /<br>Technical Writer</div>
+        <div class="name">(Contractor)</div>
+        <div class="dept">Federal Contracting</div>
+      </div>
+    </div>
+
+    <div class="col">
+      <div class="card tier-mgr">
+        <div class="icon">🧾</div>
+        <div class="title">Bookkeeper /<br>Accountant</div>
+        <div class="name">(Part-time / CPA Firm)</div>
+        <div class="dept">Finance</div>
+      </div>
+    </div>
+
+  </div>
+
+  <div style="margin-top:28px;"></div>
+
+  <!-- TIER 5: Advisory -->
+  <div class="branch" style="width:700px;gap:16px;flex-wrap:wrap;justify-content:center;">
+    <div style="width:100%;text-align:center;font-size:11px;font-weight:700;color:var(--grey);letter-spacing:1px;margin-bottom:8px;">— ADVISORS —</div>
+
+    <div class="col">
+      <div class="card tier-adv">
+        <div class="icon">⚖️</div>
+        <div class="title">Legal Counsel<br>(Government Contracts)</div>
+        <div class="name">(Law Firm / Advisor)</div>
+        <div class="dept">Legal</div>
+      </div>
+    </div>
+
+    <div class="col">
+      <div class="card tier-adv">
+        <div class="icon">🤝</div>
+        <div class="title">SBA / PTAC<br>Business Advisor</div>
+        <div class="name">(SBA Resource Partner)</div>
+        <div class="dept">Advisory</div>
+      </div>
+    </div>
+
+    <div class="col">
+      <div class="card tier-adv">
+        <div class="icon">🏢</div>
+        <div class="title">Teaming Partner<br>(Prime Contractor)</div>
+        <div class="name">(Strategic Alliance)</div>
+        <div class="dept">Partnerships</div>
+      </div>
+    </div>
+
+  </div>
+
+</div>
+
+<!-- Legend -->
+<div class="legend">
+  <div class="legend-item"><div class="legend-dot" style="background:var(--navy);"></div> Executive</div>
+  <div class="legend-item"><div class="legend-dot" style="background:var(--blue);"></div> C-Suite / VP</div>
+  <div class="legend-item"><div class="legend-dot" style="background:var(--accent);border-radius:3px;"></div> Director / Lead</div>
+  <div class="legend-item"><div class="legend-dot" style="background:#CBD5E1;"></div> Staff / Contractor</div>
+  <div class="legend-item"><div class="legend-dot" style="background:#F59E0B;"></div> Advisor</div>
+</div>
+
+<div class="footer">
+  Vectra Core Systems LLC &nbsp;·&nbsp; Grandview, MO 64030 &nbsp;·&nbsp; vectracoresystems.com<br>
+  CAGE: 21P32 &nbsp;·&nbsp; UEI: XUXWMY61KXR6 &nbsp;·&nbsp; NAICS: 541512 · 488510 · 541614
+</div>
+
+</body>
+</html>

@@ -423,6 +423,158 @@ img { max-width: 100%; }
   margin-top: 12px;
 }
 
+/* ---- COMMERCIAL OFFERINGS ---- */
+.commercial-section {
+  background:
+    radial-gradient(circle at top right, rgba(0,180,216,0.08), transparent 28%),
+    linear-gradient(180deg, #ffffff 0%, #f6fbfe 100%);
+}
+
+.commercial-pillars {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+  margin-bottom: 28px;
+}
+
+.commercial-pillars span {
+  background: rgba(0,180,216,0.1);
+  color: var(--navy);
+  border: 1px solid rgba(0,180,216,0.24);
+  border-radius: 999px;
+  padding: 8px 14px;
+  font-size: 0.86rem;
+  font-weight: 700;
+}
+
+.commercial-highlight {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 24px;
+  background: var(--navy);
+  border-radius: 18px;
+  padding: 28px 30px;
+  margin-bottom: 28px;
+  box-shadow: 0 14px 30px rgba(10,22,40,0.18);
+}
+
+.commercial-highlight .section-label {
+  color: var(--blue);
+  margin-bottom: 10px;
+}
+
+.commercial-highlight h3 {
+  color: var(--white);
+  font-size: 1.4rem;
+  margin-bottom: 8px;
+}
+
+.commercial-highlight p {
+  color: var(--silver);
+  max-width: 720px;
+}
+
+.commercial-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 24px;
+  margin-bottom: 24px;
+}
+
+.commercial-card {
+  background: var(--white);
+  border: 1px solid var(--mid);
+  border-radius: 18px;
+  padding: 28px;
+  box-shadow: 0 10px 30px rgba(10,22,40,0.06);
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.commercial-card-wide {
+  grid-column: 1 / -1;
+}
+
+.commercial-card-head {
+  display: flex;
+  justify-content: space-between;
+  gap: 16px;
+  align-items: flex-start;
+}
+
+.commercial-card h3 {
+  font-size: 1.15rem;
+  font-weight: 800;
+  color: var(--navy);
+  line-height: 1.3;
+}
+
+.commercial-price {
+  flex-shrink: 0;
+  background: rgba(0,180,216,0.12);
+  color: var(--blue-dark);
+  font-size: 0.9rem;
+  font-weight: 800;
+  border-radius: 999px;
+  padding: 8px 12px;
+  white-space: nowrap;
+}
+
+.commercial-meta {
+  color: var(--blue-dark);
+  font-weight: 700;
+  font-size: 0.88rem;
+}
+
+.commercial-card p {
+  color: var(--text-muted);
+  font-size: 0.95rem;
+  line-height: 1.65;
+}
+
+.commercial-block strong {
+  display: block;
+  color: var(--navy);
+  font-size: 0.88rem;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  margin-bottom: 8px;
+}
+
+.commercial-block ul {
+  margin: 0;
+  padding-left: 18px;
+  color: var(--text-muted);
+}
+
+.commercial-block li {
+  margin-bottom: 6px;
+  font-size: 0.92rem;
+}
+
+.commercial-deliverable {
+  background: #f8fafc;
+  border: 1px solid #dbe7f3;
+  border-left: 4px solid var(--blue-dark);
+  border-radius: 10px;
+  padding: 14px 16px;
+  color: var(--navy);
+  font-size: 0.92rem;
+  font-weight: 600;
+}
+
+.commercial-btn {
+  align-self: flex-start;
+}
+
+.commercial-note {
+  color: var(--text-muted);
+  font-size: 0.92rem;
+  max-width: 900px;
+}
+
 /* ---- GOVCON ---- */
 .govcon-grid {
   display: grid;
@@ -649,6 +801,20 @@ img { max-width: 100%; }
   border-radius: var(--radius);
   padding: 40px;
   box-shadow: var(--shadow);
+}
+
+.contact-form {
+  display: block;
+}
+
+.contact-form a {
+  color: var(--blue-dark);
+  font-weight: 600;
+}
+
+.contact-form textarea {
+  resize: vertical;
+  min-height: 160px;
 }
 
 /* ---- FORMS ---- */

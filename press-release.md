@@ -11,3 +11,19 @@ Manse Soura
 CEO, Vectra Core Systems LLC
 contracts@vectracoresystems.com
 https://vectracoresystems.com
+
+---
+
+FOR IMMEDIATE RELEASE
+
+Vectra Core Systems LLC Joins the AWS Partner Network
+
+GRANDVIEW, MO - Vectra Core Systems LLC has joined the AWS Partner Network (APN), a global community of organizations that use AWS services to build solutions and deliver services to customers.
+
+As an APN member, Vectra continues to support organizations with cloud engineering, infrastructure modernization, security, and DevOps services. The company brings its veteran-led approach to helping government and commercial clients plan and implement technology solutions.
+
+For more information, contact:
+Manse Soura
+CEO, Vectra Core Systems LLC
+contracts@vectracoresystems.com
+https://vectracoresystems.com
